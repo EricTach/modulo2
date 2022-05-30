@@ -8,12 +8,20 @@
     <title>Currículo</title>
     <link rel="stylesheet" href="style.css">
     <script src="curriculo.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("h3").click(function(){
+            $(this).hide();
+        });
+        });
+    </script>
 </head>
 <body>
 
    
     <div class="container" id="info">
+        <h3>Engenheiro de Software (se clicar some)</h3>
         <h1>Nome: Eric Tachdjian</h1>
         <p>Email: eric.tachdjian@sou.inteli.edu.br</p>
         <p>Formação: Cólegio Pentágono e INTELI(cursando)</p>
