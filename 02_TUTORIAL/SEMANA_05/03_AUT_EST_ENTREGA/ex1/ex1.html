@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo</title>
+    <script src="calc.js"></script>
+</head>
+<body>
+    <h1>Calculadora!</h1>
+        <label for="n1">Inserir primeiro número: </label>
+        <input type="number" id="n1" step="0.1" min="0.1" required value=""> <br>
+        <label for="tipocalc">Selecione a operação da conta: </label>
+        <select id="tipocalc">
+            <option value="0" id="soma">+</option>
+            <option value="1" id="menos">-</option>
+            <option value="2" id="div">/</option>
+            <option value="3" id="mutlt">*</option>
+            <option value="4" id="%">%</option>
+        </select> <br>
+        <label for="n1">Inserir segundo número: </label>
+        <input type="number" id="n2" step="0.1" min="0.1" value="" required> <br>
+        <button type="button" onclick="calculo();">Calcular</button>
+        <div id="resultado">Resultado: </div>
+
+
+</body>
+</html>
