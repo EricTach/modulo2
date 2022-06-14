@@ -31,7 +31,7 @@ app.get('/robocore', (req, res) => {
     app.post('/robocoreinsert', (req, res) => {
         res.statusCode = 200;
         res.setHeader('Access-Control-Allow-Origin', '*');
-        sql =`INSERT INTO robocore (comp,lugar,data) VALUES (${req.body.comp},  ${req.body.lugar},  ${req.body.data})`;
+        sql =`INSERT INTO robocore (comp,lugar,data) VALUES ("${req.body.comp}",  ${req.body.lugar},  ${req.body.data})`;
         var db = new sqlite3.Database(DBPATH); // Abre o banco
         console.log(sql);
         db.run(sql, [],  err => {
@@ -48,10 +48,10 @@ app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
   });
 
-        app.delete('/robocore/:id', (req, res) => {
+        app.delete('/robocoredelete', (req, res) => {
         res.statusCode = 200;
         res.setHeader('Access-Control-Allow-Origin', '*');
-        sql = `DELETE FROM robocore WHERE id = ${req.params.id}`;
+        sql = `DELETE FROM robocore WHERE id = ${req.body.id}`;
         var db = new sqlite3.Database(DBPATH); // Abre o banco
         console.log(sql);
         db.run(sql, [],  err => {
@@ -63,3 +63,23 @@ app.listen(port, hostname, () => {
         db.close(); // Fecha o banco
         res.end();
     }
+    );
+
+
+    app.patch('/robocoreupdate', (req, res) => {
+        res.statusCode = 200;
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        sql = `UPDATE robocore SET comp = '${req.body.comp}', lugar = ${req.body.lugar}, data = ${req.body.data} WHERE id = ${req.body.id}`;
+        var db = new sqlite3.Database(DBPATH); // Abre o banco
+        console.log(sql);
+        db.run(sql, [],  err => {
+            if (err) {
+                throw err;
+            }
+            else console.log(sql);
+        }
+        );
+        db.close(); // Fecha o banco
+        res.end();
+    }
+    );

@@ -22,6 +22,8 @@
         <p>Certificação: Cambridge FCE, Curso de Robótica Robocore, Rumando para o diploma de Engenharia de Software no INTELI </p>
         
         <h2>Participações na ROBOCORE</h2>
+        <input type="number" id="id">
+        <button type="submit" onclick="deleteRobocore()">Deletar</button>
         <div id="robocore"></div>
         <button type="button" onclick="getRobocore()">Visualizar</button>
        <form id="enter">
@@ -31,7 +33,18 @@
         <input type="number" name="lugar" id="lugar"><br>
         <label for="anos">Ano da compentição:</label>
         <input type="number" name="data" id="data"><br>
-        <button type="submit" id="adicionar" onclick="postRobocore()">Adicionar competição</button>
+        <button type="submit" id="adicionar" onclick="postRobocore();">Adicionar competição</button>
+        </form>
+        <form>
+        <label for="compet">Inserir a competição:</label>
+        <input type="text" name="comp" id="comp2"><br>
+        <label for="lugar">Colocação na compentição:</label>
+        <input type="number" name="lugar" id="lugar2"><br>
+        <label for="anos">Ano da compentição:</label>
+        <input type="number" name="data" id="data2"><br>
+        <label for="id2">Id:</label>
+        <input type="number" id="id2"><br>
+        <button type="submit" id="adicionar" onclick="updateRobocore();">Editar competição</button>
        </form>
         <div id="container">
             <button onclick="palavra()" id="button">Clique</button>

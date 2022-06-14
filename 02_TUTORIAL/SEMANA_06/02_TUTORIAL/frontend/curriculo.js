@@ -20,7 +20,7 @@
               
               
               $("#robocore")[0].innerHTML += `
-              <p> ${robocore.data} - ${robocore.comp} - ${robocore.lugar}
+              <p> Data: ${robocore.data} - Competição: ${robocore.comp} - Colocação: ${robocore.lugar} - Id: ${robocore.id}
                     </p>
                     `  
                   });
@@ -37,11 +37,11 @@
                 const lugarInput = parseInt(document.getElementById("lugar").value)
                 const dataInput = parseInt(document.getElementById("data").value)
 
-                // urla = "/robocoreinsert"
+                url = "/robocoreinsert"
 
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:3061/robocoreinsert",
+                    url: url,
                     contextType: "aplication/json; charset=utf-8",
                     dataType: "json",
                     data: {
@@ -53,6 +53,40 @@
                 getEmpPage();
             }
 
+            function deleteRobocore(){
+                const idInput = parseInt(document.getElementById("id").value);
+                url = "/robocoredelete";
+                $.ajax({
+                    type: "DELETE",
+                    url: url,
+                    contextType: "aplication/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                            id: idInput,
+                        }
+                });
+            }
+
+            
+            function updateRobocore(){
+                const idInput = parseInt(document.getElementById("id2").value);
+                const compInput = document.getElementById("comp2").value;
+                const lugarInput = parseInt(document.getElementById("lugar2").value);
+                const dataInput = parseInt(document.getElementById("data2").value);
+                url = "/robocoreupdate";
+                $.ajax({
+                    type: "PATCH",
+                    url: url,
+                    contextType: "aplication/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                            id: idInput,
+                            comp: compInput,
+                            lugar: lugarInput,
+                            data: dataInput,
+                        }
+                });
+            }
 
 
 
