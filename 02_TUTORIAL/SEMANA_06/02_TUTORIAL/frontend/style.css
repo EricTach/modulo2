@@ -12,6 +12,9 @@
     width: 100px;
     position: absolute;
 }
+#enter{
+    margin-top: 15px;
+}
 h1{
     font-size: 20px;
     text-align: center;

@@ -7,13 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Currículo</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        $(document).ready(function(){
-        $("h3").click(function(){
-            $(this).hide();
-        });
-        });
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -30,6 +24,15 @@
         <h2>Participações na ROBOCORE</h2>
         <div id="robocore"></div>
         <button type="button" onclick="getRobocore()">Visualizar</button>
+       <form id="enter">
+        <label for="compet">Inserir a competição:</label>
+        <input type="text" name="comp" id="comp"><br>
+        <label for="lugar">Colocação na compentição:</label>
+        <input type="number" name="lugar" id="lugar"><br>
+        <label for="anos">Ano da compentição:</label>
+        <input type="number" name="data" id="data"><br>
+        <button type="submit" id="adicionar" onclick="postRobocore()">Adicionar competição</button>
+       </form>
         <div id="container">
             <button onclick="palavra()" id="button">Clique</button>
           </div>
@@ -39,7 +42,14 @@
         <img src="img/Slide1.jpeg">
    </div>
   
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
    <script src="curriculo.js"></script>
+   <script>
+    $(document).ready(function(){
+    $("h3").click(function(){
+        $(this).hide();
+    });
+    });
+</script>
 </body>
 </html>

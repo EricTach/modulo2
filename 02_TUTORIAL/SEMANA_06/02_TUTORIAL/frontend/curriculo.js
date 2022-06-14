@@ -31,3 +31,28 @@
                
                   xhttp.send(); 
             }
+
+            function postRobocore(){
+                const compInput = document.getElementById("comp").value
+                const lugarInput = parseInt(document.getElementById("lugar").value)
+                const dataInput = parseInt(document.getElementById("data").value)
+
+                // urla = "/robocoreinsert"
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:3061/robocoreinsert",
+                    contextType: "aplication/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                            comp: compInput,
+                            lugar: lugarInput,
+                            data: dataInput,
+                        }
+                });
+                getEmpPage();
+            }
+
+
+
+
